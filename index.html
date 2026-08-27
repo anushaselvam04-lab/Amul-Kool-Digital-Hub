@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amul Kool Elaichi - The Refreshing Taste of India</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#B91C1C',
+              darkRed: '#7F1D1D',
+              lightRed: '#FEF2F2',
+              mint: '#15803D',
+              lightMint: '#DCFCE7',
+              elaichi: '#65A30D',
+              cream: '#F7F9F2',
+              milk: '#FDFBF7',
+              dark: '#0F172A',
+              accent: '#84CC16'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Cabinet Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-red': '0 0 25px -5px rgba(185, 28, 28, 0.4)',
+            'glow-mint': '0 0 25px -5px rgba(21, 128, 61, 0.4)',
+            'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 4s ease-in-out infinite',
+            'spin-slow': 'spin 12s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.7); }
+    .glass-dark { background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); }
+    
+    /* Range input styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: transparent;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 9999px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #B91C1C;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -5px;
+      box-shadow: 0 2px 6px rgba(185, 28, 28, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#F6F8F2] text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-brand-red selection:text-white">
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION BAR                                               -->
+  <!-- ============================================================ -->
+  <nav class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-slate-200/60 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="group flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform duration-200">
+            A
+          </div>
+          <div>
+            <span class="font-display font-black text-2xl tracking-tight text-brand-red group-hover:opacity-90 transition-opacity">Amul</span>
+            <span class="font-sans font-extrabold text-sm uppercase tracking-widest text-brand-mint ml-1 px-1.5 py-0.5 bg-brand-lightMint rounded-md">Kool</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Links -->
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+        <a href="#hero" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-red rounded-lg hover:bg-white/60 transition-colors">Overview</a>
+        <a href="#features" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-red rounded-lg hover:bg-white/60 transition-colors">Highlights</a>
+        <a href="#nutrition" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-red rounded-lg hover:bg-white/60 transition-colors">Nutrition</a>
+        <a href="#flavours" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-red rounded-lg hover:bg-white/60 transition-colors">All Flavours</a>
+        <a href="#recipes" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-brand-red rounded-lg hover:bg-white/60 transition-colors">Mixology</a>
+      </div>
+
+      <!-- Right CTAs -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleAudio()" id="audio-toggle-btn" class="p-2.5 rounded-full hover:bg-white/90 text-slate-700 hover:text-brand-mint border border-slate-200 transition-all flex items-center justify-center text-sm shadow-sm" title="Ambient Chill Chime (Press M)">
+          <span class="material-symbols-outlined text-xl" id="audio-icon">volume_up</span>
+        </button>
+
+        <button onclick="openStoreModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-brand-red hover:bg-brand-darkRed shadow-md hover:shadow-glow-red hover:-translate-y-0.5 transition-all duration-200">
+          <span class="material-symbols-outlined text-base">near_me</span>
+          <span>Find Near Me</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO BANNER SECTION                                          -->
+  <!-- ============================================================ -->
+  <section id="hero" class="relative w-full pt-28 pb-20 overflow-hidden bg-gradient-to-b from-[#E7EFE1] via-[#F4F7EE] to-[#E9F1E2]">
+    
+    <!-- Ambient Decorative Blurred Lights -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-32 w-96 h-96 bg-lime-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-red-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Product Story & CTAs -->
+        <div class="lg:col-span-7 flex flex-col items-start text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-panel shadow-sm text-xs font-bold text-brand-mint uppercase tracking-widest mb-4 border border-emerald-200/80 animate-float">
+            <span class="w-2 h-2 rounded-full bg-brand-mint animate-ping"></span>
+            <span>The Taste of India™ • 100% Pure Dairy</span>
+          </div>
+
+          <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-slate-900 tracking-tight leading-[1.1] mb-5">
+            The Refreshing Royal Taste of <span class="text-brand-red underline decoration-brand-mint/30 decoration-wavy underline-offset-8">Elaichi</span> Milk
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
+            Pure standardized Amul toned milk steeped with authentic green cardamom extracts. Nutritious, rich in natural dairy calcium & protein, and best served ice-cold for instant rejuvenation.
+          </p>
+
+          <!-- Key Benefits Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full mb-8">
+            <div class="glass-panel p-3.5 rounded-2xl border border-white/80 text-center shadow-sm">
+              <div class="text-brand-mint font-display font-black text-xl">100%</div>
+              <div class="text-[11px] font-semibold text-slate-600 mt-0.5">Pure Dairy</div>
+            </div>
+            <div class="glass-panel p-3.5 rounded-2xl border border-white/80 text-center shadow-sm">
+              <div class="text-brand-elaichi font-display font-black text-xl">Real</div>
+              <div class="text-[11px] font-semibold text-slate-600 mt-0.5">Cardamom</div>
+            </div>
+            <div class="glass-panel p-3.5 rounded-2xl border border-white/80 text-center shadow-sm">
+              <div class="text-blue-600 font-display font-black text-xl">115 mg</div>
+              <div class="text-[11px] font-semibold text-slate-600 mt-0.5">Calcium / 100ml</div>
+            </div>
+            <div class="glass-panel p-3.5 rounded-2xl border border-white/80 text-center shadow-sm">
+              <div class="text-brand-red font-display font-black text-xl">₹30</div>
+              <div class="text-[11px] font-semibold text-slate-600 mt-0.5">200ml Bottle</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4">
+            <button onclick="openStoreModal()" class="px-7 py-3.5 rounded-full bg-brand-red hover:bg-brand-darkRed text-white text-sm font-extrabold uppercase tracking-wider shadow-lg hover:shadow-glow-red hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg">shopping_bag</span>
+              <span>Find Near Me / Order</span>
+            </button>
+            <a href="#nutrition" class="px-6 py-3.5 rounded-full glass-panel hover:bg-white text-slate-800 text-sm font-bold shadow-sm border border-slate-200/80 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg text-brand-mint">nutrition</span>
+              <span>Nutrition Facts</span>
+            </a>
+            <a href="#flavours" class="px-6 py-3.5 rounded-full glass-panel hover:bg-white text-slate-800 text-sm font-bold shadow-sm border border-slate-200/80 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-lg text-amber-500">stars</span>
+              <span>All Flavours</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Visual Product Stage with 240-Frame Animation -->
+        <div class="lg:col-span-5 relative flex items-center justify-center">
+          
+          <!-- Decorative Glow Backdrop -->
+          <div class="w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-emerald-300/40 via-lime-200/50 to-white/60 blur-2xl absolute"></div>
+
+          <!-- Product Animation Canvas Container -->
+          <div class="relative z-10 flex flex-col items-center w-full max-w-[440px] sm:max-w-[480px]">
+            
+            <div id="side-canvas-container" class="relative w-full h-[380px] sm:h-[430px] md:h-[460px] flex items-center justify-center cursor-grab select-none touch-none">
+              <canvas id="sideBottleCanvas" class="w-full h-full object-contain"></canvas>
+
+              <!-- Floating Badges -->
+              <div class="absolute top-4 -left-2 sm:-left-6 glass-panel px-3.5 py-2 rounded-2xl shadow-xl border border-white flex items-center gap-2 animate-float pointer-events-none z-20">
+                <span class="w-8 h-8 rounded-xl bg-emerald-100 text-brand-mint flex items-center justify-center font-bold text-sm">
+                  <span class="material-symbols-outlined text-base">spa</span>
+                </span>
+                <div class="text-left">
+                  <div class="text-[11px] font-black text-slate-900">Real Elaichi</div>
+                  <div class="text-[10px] text-slate-500 font-semibold">Ayurvedic Soothe</div>
+                </div>
+              </div>
+
+              <div class="absolute bottom-6 -right-2 sm:-right-6 glass-panel px-3.5 py-2 rounded-2xl shadow-xl border border-white flex items-center gap-2 animate-float pointer-events-none z-20" style="animation-delay: 2s;">
+                <span class="w-8 h-8 rounded-xl bg-rose-100 text-brand-red flex items-center justify-center font-bold text-sm">
+                  <span class="material-symbols-outlined text-base">ac_unit</span>
+                </span>
+                <div class="text-left">
+                  <div class="text-[11px] font-black text-slate-900">Best Chilled</div>
+                  <div class="text-[10px] text-slate-500 font-semibold">Instant Energy</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Controller Bar -->
+            <div class="w-full mt-2 glass-panel p-3 rounded-2xl shadow-lg border border-white/80 flex flex-col gap-2 z-20">
+              <div class="flex items-center justify-between gap-2">
+                <button id="side-play-btn" onclick="toggleSidePlay()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-red hover:bg-brand-darkRed text-white text-xs font-bold uppercase tracking-wider shadow-sm transition-all hover:scale-105 active:scale-95">
+                  <span class="material-symbols-outlined text-sm" id="side-play-icon">pause</span>
+                  <span id="side-play-text">Pause</span>
+                </button>
+                
+                <div class="flex items-center gap-1">
+                  <button onclick="setSideFrame(1)" class="px-2 py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:bg-slate-100 transition-colors">Start</button>
+                  <button onclick="setSideFrame(60)" class="px-2 py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:bg-slate-100 transition-colors">Splash</button>
+                  <button onclick="setSideFrame(140)" class="px-2 py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:bg-slate-100 transition-colors">Crown</button>
+                  <button onclick="setSideFrame(240)" class="px-2 py-1 rounded-lg text-[10px] font-bold text-slate-600 hover:bg-slate-100 transition-colors">End</button>
+                </div>
+
+                <div class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-mono font-bold flex items-center gap-1">
+                  <span class="text-brand-mint">F:</span>
+                  <span id="side-frame-counter">001</span>
+                  <span class="text-slate-400">/240</span>
+                </div>
+              </div>
+
+              <!-- Interactive Timeline Scrubber -->
+              <div class="flex items-center gap-2 w-full pt-1">
+                <span class="text-[10px] font-mono text-slate-400">01</span>
+                <input 
+                  type="range" 
+                  id="side-scrubber" 
+                  min="1" 
+                  max="240" 
+                  value="1" 
+                  step="1" 
+                  class="w-full accent-brand-red cursor-pointer"
+                  oninput="onSideScrubberInput(this.value)"
+                  onmousedown="isDraggingScrubber = true"
+                  onmouseup="isDraggingScrubber = false"
+                  ontouchstart="isDraggingScrubber = true"
+                  ontouchend="isDraggingScrubber = false"
+                />
+                <span class="text-[10px] font-mono text-slate-400">240</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PRODUCT HIGHLIGHTS & BENEFIT GRID                            -->
+  <!-- ============================================================ -->
+  <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lightMint text-brand-mint text-xs font-bold uppercase tracking-wider mb-3">
+        <span class="material-symbols-outlined text-sm">verified</span>
+        <span>The Taste of Purity</span>
+      </div>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
+        Why India Loves Amul Kool Elaichi
+      </h2>
+      <p class="mt-4 text-base text-slate-600">
+        Engineered with traditional Ayurveda-inspired cardamom cooling benefits and the unmatched purity of cooperative dairy.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="glass-panel p-8 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-brand-mint mb-6 shadow-inner">
+            <span class="material-symbols-outlined text-3xl">water_drop</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">100% Pure Amul Milk</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Fresh standardized toned milk ensuring natural dairy calcium, vitamins, and protein with every refreshing gulp.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-mint">
+          <span>Cooperative Verified</span>
+          <span class="material-symbols-outlined text-sm ml-1">check_circle</span>
+        </div>
+      </div>
+
+      <div class="glass-panel p-8 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-lime-50 border border-lime-200 flex items-center justify-center text-brand-elaichi mb-6 shadow-inner">
+            <span class="material-symbols-outlined text-3xl">spa</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Authentic Cardamom</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Natural cardamom extract from prime spice plantations, imparting an invigorating royal aroma and natural digestive soothe.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-elaichi">
+          <span>Real Pod Extracts</span>
+          <span class="material-symbols-outlined text-sm ml-1">check_circle</span>
+        </div>
+      </div>
+
+      <div class="glass-panel p-8 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mb-6 shadow-inner">
+            <span class="material-symbols-outlined text-3xl">ac_unit</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Best Served Ice Cold</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Ultra-pasteurized and sealed under sterile aseptic conditions for long shelf stability and crisp, refreshing taste when chilled.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-blue-600">
+          <span>Instant Heat Relief</span>
+          <span class="material-symbols-outlined text-sm ml-1">check_circle</span>
+        </div>
+      </div>
+
+      <div class="glass-panel p-8 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-brand-red mb-6 shadow-inner">
+            <span class="material-symbols-outlined text-3xl">bolt</span>
+          </div>
+          <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Zero Added Preservatives</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Pure ingredients with no artificial chemical preservatives. Wholesome hydration for kids, athletes, and the entire family.</p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center text-xs font-semibold text-brand-red">
+          <span>Natural & Safe</span>
+          <span class="material-symbols-outlined text-sm ml-1">check_circle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- NUTRITION & INGREDIENT EXPLORER                              -->
+  <!-- ============================================================ -->
+  <section id="nutrition" class="py-20 bg-white/70 border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Nutrition Breakdown Table -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lightRed text-brand-red text-xs font-bold uppercase tracking-wider mb-4">
+            <span class="material-symbols-outlined text-sm">health_and_safety</span>
+            <span>Nutritional Facts</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight mb-4">
+            Wholesome Fuel in Every Sip
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mb-8">
+            Amul Kool Elaichi balances wholesome milk proteins, calcium, and carbohydrates to revitalize your day without unnecessary additives.
+          </p>
+
+          <div class="flex items-center gap-2 mb-6 bg-slate-100 p-1 rounded-xl w-fit">
+            <button onclick="setNutritionUnit('100ml')" id="btn-nutri-100" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all">Per 100 ml</button>
+            <button onclick="setNutritionUnit('200ml')" id="btn-nutri-200" class="px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">Per 200 ml Bottle</button>
+          </div>
+
+          <div class="glass-panel rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200">
+                <tr>
+                  <th class="py-3 px-5">Nutrient</th>
+                  <th class="py-3 px-5 text-right" id="nutri-head">Amount (Per 100ml)</th>
+                  <th class="py-3 px-5 text-right">% Daily Value</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700">
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Energy</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-red" id="nutri-energy">88 kcal</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">4.4%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Total Fat</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-fat">3.1 g</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">4.0%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Protein</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-mint" id="nutri-protein">3.0 g</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">6.0%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Carbohydrate</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-carbs">12.0 g</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">4.6%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Added Sugar</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-sugar">8.0 g</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">16.0%</td>
+                </tr>
+                <tr class="hover:bg-slate-50/80 transition-colors">
+                  <td class="py-3.5 px-5 font-semibold text-slate-900">Calcium</td>
+                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-mint" id="nutri-calcium">115 mg</td>
+                  <td class="py-3.5 px-5 text-right text-slate-500">11.5%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Packaging & Ingredients Box -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/80 shadow-lg">
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-mint">inventory_2</span>
+              <span>Available Packaging</span>
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Packaged under state-of-the-art sterile conditions.</p>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                <div class="text-2xl font-black text-brand-red font-display">200 ml</div>
+                <div class="text-xs font-semibold text-slate-600 mt-1">Glass & PET Bottle</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹30</div>
+              </div>
+              <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
+                <div class="text-2xl font-black text-brand-mint font-display">180 ml</div>
+                <div class="text-xs font-semibold text-slate-600 mt-1">Sleek Can & Tetra</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹25</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/80 shadow-lg">
+            <h3 class="font-display font-bold text-xl text-slate-900 mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-brand-elaichi">local_florist</span>
+              <span>Pure Ingredients</span>
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed mb-4">
+              <strong>Toned Milk</strong> (min. 3.0% Fat, 8.5% SNF), <strong>Sugar</strong>, <strong>Natural Cardamom Extract</strong>, and Permitted Natural Stabilizer (INS 407).
+            </p>
+            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center gap-3">
+              <span class="material-symbols-outlined text-emerald-600 text-xl">verified_user</span>
+              <span class="text-xs font-medium text-emerald-800">FSSAI Certified Quality • Best Before 180 Days from Mfg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ALL FLAVOURS CAROUSEL                                        -->
+  <!-- ============================================================ -->
+  <section id="flavours" class="py-24 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
+        <span class="material-symbols-outlined text-sm">stars</span>
+        <span>Flavour Range</span>
+      </div>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
+        Discover the Full Amul Kool Family
+      </h2>
+      <p class="mt-4 text-slate-600 text-sm sm:text-base">
+        From aromatic spices to rich nuts and botanical florals, experience India's favourite flavoured milk range.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Elaichi -->
+      <div class="glass-panel p-6 rounded-3xl border-2 border-brand-mint shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-white to-emerald-50/50">
+        <span class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-brand-mint text-white text-[10px] font-extrabold uppercase tracking-widest shadow-sm">Current Flavour</span>
+        <div>
+          <div class="h-44 flex items-center justify-center mb-4">
+            <img src="Elaichi.png" alt="Amul Kool Elaichi" class="h-full object-contain drop-shadow-md hover:scale-110 transition-transform duration-300" />
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Elaichi</h3>
+          <p class="text-xs text-slate-600 mb-4">Aromatic royal cardamom infusion with pure toned milk.</p>
+        </div>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-full py-2.5 rounded-xl bg-brand-mint text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-800 transition-colors shadow-md">
+          Selected
+        </button>
+      </div>
+
+      <!-- Kesar (Saffron) -->
+      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-amber-50/50">
+        <div>
+          <div class="h-44 flex items-center justify-center mb-4">
+            <div class="w-24 h-36 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shadow-inner">
+              <span class="material-symbols-outlined text-5xl">local_drink</span>
+            </div>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Kesar</h3>
+          <p class="text-xs text-slate-600 mb-4">Exotic Kashmiri saffron threads steeped in rich golden cream.</p>
+        </div>
+        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-amber-600 transition-colors shadow-md">
+          Find Flavour
+        </button>
+      </div>
+
+      <!-- Badam (Almond) -->
+      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-orange-50/50">
+        <div>
+          <div class="h-44 flex items-center justify-center mb-4">
+            <div class="w-24 h-36 rounded-2xl bg-orange-100 border border-orange-300 flex items-center justify-center text-orange-700 shadow-inner">
+              <span class="material-symbols-outlined text-5xl">nutrition</span>
+            </div>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Badam</h3>
+          <p class="text-xs text-slate-600 mb-4">Real crushed almonds for nourishing nutty deliciousness.</p>
+        </div>
+        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-orange-600 transition-colors shadow-md">
+          Find Flavour
+        </button>
+      </div>
+
+      <!-- Rose -->
+      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-rose-50/50">
+        <div>
+          <div class="h-44 flex items-center justify-center mb-4">
+            <div class="w-24 h-36 rounded-2xl bg-rose-100 border border-rose-300 flex items-center justify-center text-rose-700 shadow-inner">
+              <span class="material-symbols-outlined text-5xl">emoji_nature</span>
+            </div>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Rose</h3>
+          <p class="text-xs text-slate-600 mb-4">Sweet floral Damask rose petals blended with silky milk.</p>
+        </div>
+        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-rose-600 transition-colors shadow-md">
+          Find Flavour
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MIXOLOGY & RECIPES SECTION                                   -->
+  <!-- ============================================================ -->
+  <section id="recipes" class="py-20 bg-gradient-to-b from-white to-[#F6F8F2] border-t border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-brand-mint text-xs font-bold uppercase tracking-wider mb-3">
+            <span class="material-symbols-outlined text-sm">blender</span>
+            <span>Chef's Special</span>
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+            Amul Kool Mixology Recipes
+          </h2>
+        </div>
+        <p class="text-sm text-slate-500 mt-2 md:mt-0 max-w-md">
+          Level up your dessert table with these quick, refreshing culinary creations crafted with Amul Kool Elaichi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Recipe 1 -->
+        <div class="glass-panel rounded-3xl overflow-hidden border border-white shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+          <div class="h-48 bg-emerald-900 relative overflow-hidden flex items-center justify-center">
+            <img src="Milk_bottle_with_splashes_2K_202608262351.jpeg" alt="Elaichi Shake" class="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-bold backdrop-blur-md">5 Mins Prep</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Royal Elaichi Falooda Shake</h3>
+              <p class="text-xs text-slate-600 mb-4">
+                Blend 1 bottle chilled Amul Kool Elaichi with soaked sabja seeds, rose vermicelli, and a scoop of Amul Vanilla Ice Cream.
+              </p>
+            </div>
+            <div class="text-xs font-bold text-brand-mint flex items-center gap-1 cursor-pointer" onclick="alert('Recipe Details: Pour 200ml chilled Amul Kool Elaichi in tall glass, layer 2 tbsp soaked sabja seeds, 2 tbsp falooda sev, top with vanilla ice cream and pistachios!')">
+              <span>View Recipe Steps</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipe 2 -->
+        <div class="glass-panel rounded-3xl overflow-hidden border border-white shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+          <div class="h-48 bg-amber-900 relative overflow-hidden flex items-center justify-center">
+            <img src="Plain.jpeg" alt="Kulfi Popsicle" class="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-bold backdrop-blur-md">Overnight Freeze</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Artisanal Elaichi Matka Kulfi</h3>
+              <p class="text-xs text-slate-600 mb-4">
+                Simmer Amul Kool Elaichi with condensed milk, crushed pistachios, and saffron. Pour into earthen pots and freeze.
+              </p>
+            </div>
+            <div class="text-xs font-bold text-brand-mint flex items-center gap-1 cursor-pointer" onclick="alert('Recipe Details: Simmer 400ml Amul Kool with 4 tbsp Amul Mithai Mate condensed milk until reduced by 30%. Add chopped almonds, pour in moulds, and freeze 8 hours!')">
+              <span>View Recipe Steps</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipe 3 -->
+        <div class="glass-panel rounded-3xl overflow-hidden border border-white shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col">
+          <div class="h-48 bg-rose-900 relative overflow-hidden flex items-center justify-center">
+            <img src="Amul website.png" alt="Smoothie Bowl" class="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-500" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-bold backdrop-blur-md">Breakfast Bowl</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-display font-bold text-xl text-slate-900 mb-2">Cardamom Chia Superfood Bowl</h3>
+              <p class="text-xs text-slate-600 mb-4">
+                Soak 3 tablespoons chia seeds in Amul Kool Elaichi for 2 hours. Top with toasted almonds, chia seeds, and pomegranate arils.
+              </p>
+            </div>
+            <div class="text-xs font-bold text-brand-mint flex items-center gap-1 cursor-pointer" onclick="alert('Recipe Details: Mix 3 tbsp chia seeds with 200ml Amul Kool Elaichi, refrigerate for 2 hours until thick pudding forms. Garnish with berries & toasted nuts!')">
+              <span>View Recipe Steps</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- STORE LOCATOR MODAL                                          -->
+  <!-- ============================================================ -->
+  <div id="store-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+    <div class="glass-panel max-w-lg w-full mx-4 p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/80 relative scale-95 transition-transform duration-300" id="store-modal-card">
+      <button onclick="closeStoreModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-brand-lightRed text-brand-red flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl">store</span>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-xl text-slate-900">Find Amul Parlours Near You</h3>
+          <p class="text-xs text-slate-500">Over 10,000+ exclusive Amul Parlours across India</p>
+        </div>
+      </div>
+
+      <div class="relative my-4">
+        <input type="text" placeholder="Enter Pincode or City (e.g. 380001, Mumbai, Delhi)..." class="w-full px-4 py-3 pl-11 rounded-2xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red" />
+        <span class="material-symbols-outlined absolute left-3.5 top-3 text-slate-400">search</span>
+      </div>
+
+      <div class="space-y-3 max-h-56 overflow-y-auto pr-1">
+        <div class="p-3.5 rounded-xl bg-white/90 border border-slate-100 hover:border-brand-mint/50 transition-colors flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold text-slate-900">Amul Preferred Outlet - Central Plaza</div>
+            <div class="text-[11px] text-slate-500">Open 8:00 AM - 10:30 PM • 0.8 km away</div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-brand-mint text-[10px] font-bold">In Stock</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-white/90 border border-slate-100 hover:border-brand-mint/50 transition-colors flex items-center justify-between">
+          <div>
+            <div class="text-xs font-bold text-slate-900">Amul Ice Lounge & Dairy Boutique</div>
+            <div class="text-[11px] text-slate-500">Open 9:00 AM - 11:00 PM • 1.4 km away</div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-brand-mint text-[10px] font-bold">In Stock</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-end gap-3">
+        <button onclick="closeStoreModal()" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors">Close</button>
+        <button onclick="alert('Opening quick delivery options (Blinkit / Zepto / Swiggy Instamart)...')" class="px-5 py-2 rounded-xl bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-darkRed transition-colors shadow-md">Order 10-Min Delivery</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-brand-red text-white font-black flex items-center justify-center">A</div>
+            <span class="font-display font-black text-2xl text-white">Amul Kool</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+            Gujarat Co-operative Milk Marketing Federation Ltd. (GCMMF), Anand, Gujarat, India.
+          </p>
+          <div class="text-xs text-brand-accent font-semibold">
+            The Taste of India™
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-sm mb-4">Flavoured Milk</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#" class="hover:text-white transition-colors">Amul Kool Elaichi</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Amul Kool Kesar</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Amul Kool Badam</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Amul Kool Rose</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Amul Kool Cafe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-sm mb-4">Our Heritage</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#" class="hover:text-white transition-colors">The Anand Pattern</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Farmer Co-operatives</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Quality Control Lab</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Sustainability Goals</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-sm mb-4">Contact & Support</h4>
+          <p class="text-xs text-slate-400 mb-2">Toll Free: 1800-258-3333</p>
+          <p class="text-xs text-slate-400 mb-4">gcmmf@amul.coop</p>
+          <button onclick="openStoreModal()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all border border-white/20">
+            Locate Nearest Outlet
+          </button>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>© 2026 GCMMF - Amul Kool. All Rights Reserved.</div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT ENGINE & 240-FRAME SIDE ANIMATION                 -->
+  <!-- ============================================================ -->
+  <script>
+    // 240-Frame Side Animation Engine
+    const TOTAL_FRAMES = 240;
+    const FRAME_DIR = 'Elaichi extracted';
+    const FRAME_PREFIX = 'ezgif-frame-';
+    const FRAME_EXT = '.jpg';
+    const frames = [];
+    let loadedCount = 0;
+    let currentFrame = 1;
+    let isPlaying = true;
+    let playInterval = null;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartFrame = 1;
+    let audioContext = null;
+
+    const sideCanvas = document.getElementById('sideBottleCanvas');
+    const sideCtx = sideCanvas ? sideCanvas.getContext('2d') : null;
+    const sideContainer = document.getElementById('side-canvas-container');
+    const sidePlayIcon = document.getElementById('side-play-icon');
+    const sidePlayText = document.getElementById('side-play-text');
+    const sideFrameCounter = document.getElementById('side-frame-counter');
+
+    function getFrameFilename(index) {
+      const padded = String(index).padStart(3, '0');
+      return `${FRAME_DIR}/${FRAME_PREFIX}${padded}${FRAME_EXT}`;
+    }
+
+    function resizeSideCanvas() {
+      if (!sideCanvas || !sideContainer) return;
+      const rect = sideContainer.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const targetWidth = rect.width || 440;
+      const targetHeight = rect.height || 500;
+      
+      sideCanvas.width = targetWidth * dpr;
+      sideCanvas.height = targetHeight * dpr;
+      if (sideCtx) sideCtx.scale(dpr, dpr);
+      renderSideFrame(Math.round(currentFrame));
+    }
+
+    let isDraggingScrubber = false;
+
+    function renderSideFrame(index) {
+      if (!sideCanvas || !sideCtx || !sideContainer) return;
+      const frameIndex = Math.max(1, Math.min(TOTAL_FRAMES, Math.round(index)));
+      currentFrame = frameIndex;
+      const img = frames[frameIndex - 1];
+      
+      const rect = sideContainer.getBoundingClientRect();
+      const canvasW = rect.width;
+      const canvasH = rect.height;
+
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        // Fallback: If exact frame isn't loaded yet, find closest available frame
+        for (let offset = 1; offset < 30; offset++) {
+          const prev = frames[frameIndex - 1 - offset];
+          if (prev && prev.complete && prev.naturalWidth > 0) {
+            drawSideImg(prev, canvasW, canvasH);
+            updateSideCounter(frameIndex);
+            updateScrubber(frameIndex);
+            return;
+          }
+          const next = frames[frameIndex - 1 + offset];
+          if (next && next.complete && next.naturalWidth > 0) {
+            drawSideImg(next, canvasW, canvasH);
+            updateSideCounter(frameIndex);
+            updateScrubber(frameIndex);
+            return;
+          }
+        }
+        return;
+      }
+
+      drawSideImg(img, canvasW, canvasH);
+      updateSideCounter(frameIndex);
+      updateScrubber(frameIndex);
+    }
+
+    function updateScrubber(frameIndex) {
+      const scrubber = document.getElementById('side-scrubber');
+      if (scrubber && !isDraggingScrubber) {
+        scrubber.value = frameIndex;
+      }
+    }
+
+    function setSideFrame(frameNum) {
+      currentFrame = frameNum;
+      renderSideFrame(frameNum);
+    }
+
+    function onSideScrubberInput(val) {
+      currentFrame = parseInt(val, 10);
+      renderSideFrame(currentFrame);
+    }
+
+    function drawSideImg(img, canvasW, canvasH) {
+      sideCtx.clearRect(0, 0, canvasW, canvasH);
+      const imgAspect = img.naturalWidth / img.naturalHeight;
+      const canvasAspect = canvasW / canvasH;
+      let drawW, drawH, drawX, drawY;
+
+      if (canvasAspect > imgAspect) {
+        drawH = canvasH;
+        drawW = drawH * imgAspect;
+        drawX = (canvasW - drawW) / 2;
+        drawY = 0;
+      } else {
+        drawW = canvasW;
+        drawH = drawW / imgAspect;
+        drawX = 0;
+        drawY = (canvasH - drawH) / 2;
+      }
+      sideCtx.drawImage(img, drawX, drawY, drawW, drawH);
+    }
+
+    function updateSideCounter(frameIndex) {
+      if (sideFrameCounter) {
+        sideFrameCounter.textContent = String(frameIndex).padStart(3, '0');
+      }
+    }
+
+    function preloadSideFrames() {
+      // First frame load
+      const firstImg = new Image();
+      firstImg.src = getFrameFilename(1);
+      firstImg.onload = () => {
+        frames[0] = firstImg;
+        loadedCount++;
+        renderSideFrame(1);
+        loadRemainingSideFrames();
+        startSideAutoPlay();
+      };
+      firstImg.onerror = () => {
+        loadRemainingSideFrames();
+        startSideAutoPlay();
+      };
+    }
+
+    function loadRemainingSideFrames() {
+      for (let i = 2; i <= TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = getFrameFilename(i);
+        const idx = i - 1;
+        img.onload = () => {
+          frames[idx] = img;
+          loadedCount++;
+        };
+        img.onerror = () => {
+          loadedCount++;
+        };
+      }
+    }
+
+    function startSideAutoPlay() {
+      if (playInterval) clearInterval(playInterval);
+      isPlaying = true;
+      if (sidePlayIcon) sidePlayIcon.textContent = 'pause';
+      if (sidePlayText) sidePlayText.textContent = 'Pause';
+      
+      playInterval = setInterval(() => {
+        if (!isDragging) {
+          currentFrame = (currentFrame >= TOTAL_FRAMES) ? 1 : currentFrame + 1;
+          renderSideFrame(currentFrame);
+        }
+      }, 1000 / 30);
+    }
+
+    function stopSideAutoPlay() {
+      isPlaying = false;
+      if (sidePlayIcon) sidePlayIcon.textContent = 'play_arrow';
+      if (sidePlayText) sidePlayText.textContent = 'Play';
+      if (playInterval) {
+        clearInterval(playInterval);
+        playInterval = null;
+      }
+    }
+
+    function toggleSidePlay() {
+      if (isPlaying) {
+        stopSideAutoPlay();
+      } else {
+        startSideAutoPlay();
+      }
+    }
+
+    function setupSideDrag() {
+      if (!sideContainer) return;
+      sideContainer.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartFrame = currentFrame;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - dragStartX;
+        currentFrame = Math.max(1, Math.min(TOTAL_FRAMES, dragStartFrame + deltaX / 3.5));
+        renderSideFrame(currentFrame);
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      sideContainer.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartFrame = currentFrame;
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.touches[0].clientX - dragStartX;
+        currentFrame = Math.max(1, Math.min(TOTAL_FRAMES, dragStartFrame + deltaX / 3));
+        renderSideFrame(currentFrame);
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+    }
+
+    // Ambient Sound Chime using Web Audio API
+    function toggleAudio() {
+      const audioIcon = document.getElementById('audio-icon');
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (audioContext.state === 'suspended') {
+        audioContext.resume();
+      }
+
+      playRefreshingChime();
+      if (audioIcon) audioIcon.textContent = 'volume_up';
+    }
+
+    function playRefreshingChime() {
+      if (!audioContext) return;
+      const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+      notes.forEach((freq, idx) => {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioContext.currentTime + idx * 0.08);
+
+        gain.gain.setValueAtTime(0, audioContext.currentTime + idx * 0.08);
+        gain.gain.linearRampToValueAtTime(0.12, audioContext.currentTime + idx * 0.08 + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + idx * 0.08 + 1.2);
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.start(audioContext.currentTime + idx * 0.08);
+        osc.stop(audioContext.currentTime + idx * 0.08 + 1.3);
+      });
+    }
+
+    // Interactive Nutrition Facts Unit Switcher
+    function setNutritionUnit(unit) {
+      const btn100 = document.getElementById('btn-nutri-100');
+      const btn200 = document.getElementById('btn-nutri-200');
+      const nutriHead = document.getElementById('nutri-head');
+      const energy = document.getElementById('nutri-energy');
+      const fat = document.getElementById('nutri-fat');
+      const protein = document.getElementById('nutri-protein');
+      const carbs = document.getElementById('nutri-carbs');
+      const sugar = document.getElementById('nutri-sugar');
+      const calcium = document.getElementById('nutri-calcium');
+
+      if (unit === '100ml') {
+        btn100.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all";
+        btn200.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all";
+        nutriHead.textContent = "Amount (Per 100ml)";
+        energy.textContent = "88 kcal";
+        fat.textContent = "3.1 g";
+        protein.textContent = "3.0 g";
+        carbs.textContent = "12.0 g";
+        sugar.textContent = "8.0 g";
+        calcium.textContent = "115 mg";
+      } else {
+        btn200.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all";
+        btn100.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all";
+        nutriHead.textContent = "Amount (Per 200ml Bottle)";
+        energy.textContent = "176 kcal";
+        fat.textContent = "6.2 g";
+        protein.textContent = "6.0 g";
+        carbs.textContent = "24.0 g";
+        sugar.textContent = "16.0 g";
+        calcium.textContent = "230 mg";
+      }
+    }
+
+    // Store Modal Functions
+    function openStoreModal() {
+      const modal = document.getElementById('store-modal');
+      const card = document.getElementById('store-modal-card');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-95');
+      card.classList.add('scale-100');
+    }
+
+    function closeStoreModal() {
+      const modal = document.getElementById('store-modal');
+      const card = document.getElementById('store-modal-card');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      card.classList.remove('scale-100');
+      card.classList.add('scale-95');
+    }
+
+    // Keyboard Shortcuts
+    function setupKeyboardControls() {
+      window.addEventListener('keydown', (e) => {
+        if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
+          if (e.key === 'Escape') closeStoreModal();
+          return;
+        }
+
+        if (e.code === 'Space') {
+          e.preventDefault();
+          toggleSidePlay();
+        } else if (e.code === 'ArrowRight') {
+          currentFrame = Math.min(TOTAL_FRAMES, currentFrame + 1);
+          renderSideFrame(currentFrame);
+        } else if (e.code === 'ArrowLeft') {
+          currentFrame = Math.max(1, currentFrame - 1);
+          renderSideFrame(currentFrame);
+        } else if (e.code === 'KeyM') {
+          toggleAudio();
+        } else if (e.key === 'Escape') {
+          closeStoreModal();
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      window.addEventListener('resize', resizeSideCanvas);
+      resizeSideCanvas();
+      setupSideDrag();
+      setupKeyboardControls();
+      preloadSideFrames();
+    });
+  </script>
+</body>
+</html>
