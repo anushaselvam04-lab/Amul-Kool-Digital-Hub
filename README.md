@@ -32,9 +32,9 @@ An interactive, responsive product experience celebrating India's iconic **Amul 
 This project is structured for **zero-config static deployment** on [Vercel](https://vercel.com).
 
 ### Method 1: Deploy with Vercel Web Dashboard (Recommended)
-1. Push this repository to GitHub: `https://github.com/anushaselvam04-lab/Amul-Kool-Elaichi-Website.git`
+1. Push this repository to GitHub: `https://github.com/anushaselvam04-lab/Amul-Kool-Digital-Hub.git`
 2. Go to **[vercel.com/new](https://vercel.com/new)** and connect your GitHub account.
-3. Select **Amul-Kool-Elaichi-Website** repository.
+3. Select **Amul-Kool-Digital-Hub** repository.
 4. Keep the default settings (Framework Preset: *Other*, Root Directory: `./`).
 5. Click **Deploy**. Your website will be live in under 30 seconds with automated SSL, global edge CDN, and asset caching configured via `vercel.json`.
 
