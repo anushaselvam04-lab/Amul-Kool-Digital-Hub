@@ -727,85 +727,87 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- ALL FLAVOURS CAROUSEL                                        -->
+  <!-- EDITORIAL FLAVOUR RANGE GALLERY — THE KOOL COLLECTION         -->
   <!-- ============================================================ -->
-  <section id="flavours" class="py-24 max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider mb-3">
-        <span class="material-symbols-outlined text-sm">stars</span>
-        <span>Flavour Range</span>
+  <section id="flavours" class="py-28 lg:py-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden bg-transparent border-t border-[#203A2A]/10">
+    
+    <!-- Ambient Subtle Warm Light Accents -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#F7F1E5]/60 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14 lg:mb-18">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#203A2A]/5 border border-[#203A2A]/10 text-xs font-mono font-bold tracking-[0.25em] text-[#203A2A] uppercase mb-4 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#203A2A]"></span>
+        <span>THE KOOL COLLECTION</span>
       </div>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight">
-        Discover the Full Amul Kool Family
+      <h2 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight leading-[1.1]">
+        Discover the Full<br />
+        <span class="text-[#71835D] font-normal italic">Amul Kool Family</span>
       </h2>
-      <p class="mt-4 text-slate-600 text-sm sm:text-base">
+      <p class="mt-4 text-base sm:text-lg text-slate-600 font-sans max-w-2xl mx-auto leading-relaxed">
         From aromatic spices to rich nuts and botanical florals, experience India's favourite flavoured milk range.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Text-Based Flavour Navigation (No large pill buttons or generic cards) -->
+    <div class="flex items-center justify-center gap-6 sm:gap-10 lg:gap-14 border-b border-[#203A2A]/10 pb-5 max-w-3xl mx-auto mb-12 lg:mb-16">
+      <button onclick="selectFlavour('elaichi')" id="tab-elaichi" class="flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#203A2A] relative pb-2 transition-all">
+        ELAICHI
+        <span class="nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-[#203A2A] rounded-full transition-all"></span>
+      </button>
+      <button onclick="selectFlavour('kesar')" id="tab-kesar" class="flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-[#203A2A] relative pb-2 transition-all">
+        KESAR
+        <span class="nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all"></span>
+      </button>
+      <button onclick="selectFlavour('badam')" id="tab-badam" class="flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-[#203A2A] relative pb-2 transition-all">
+        BADAM
+        <span class="nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all"></span>
+      </button>
+      <button onclick="selectFlavour('rose')" id="tab-rose" class="flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-[#203A2A] relative pb-2 transition-all">
+        ROSE
+        <span class="nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all"></span>
+      </button>
+    </div>
+
+    <!-- Flavour Showcase: Two-Part Composition (Desktop) / Stacked (Mobile) -->
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
       
-      <!-- Elaichi -->
-      <div class="glass-panel p-6 rounded-3xl border-2 border-brand-mint shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-white to-emerald-50/50">
-        <span class="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-brand-mint text-white text-[10px] font-extrabold uppercase tracking-widest shadow-sm">Current Flavour</span>
-        <div>
-          <div class="h-44 flex items-center justify-center mb-4">
-            <img src="Elaichi.png" alt="Amul Kool Elaichi" class="h-full object-contain drop-shadow-md hover:scale-110 transition-transform duration-300" />
-          </div>
-          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Elaichi</h3>
-          <p class="text-xs text-slate-600 mb-4">Aromatic royal cardamom infusion with pure toned milk.</p>
+      <!-- Left: Large Flavour/Product Visual -->
+      <div class="md:col-span-6 flex items-center justify-center relative min-h-[340px] sm:min-h-[400px]">
+        <div id="flavour-glow" class="w-64 h-64 rounded-full bg-emerald-100/60 blur-3xl absolute -z-10 transition-all duration-500"></div>
+        <div id="flavour-visual-container" class="transition-all duration-500 transform">
+          <img src="Elaichi.png" alt="Amul Kool Elaichi" class="h-80 sm:h-96 object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-500" />
         </div>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-full py-2.5 rounded-xl bg-brand-mint text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-800 transition-colors shadow-md">
-          Selected
-        </button>
       </div>
 
-      <!-- Kesar (Saffron) -->
-      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-amber-50/50">
-        <div>
-          <div class="h-44 flex items-center justify-center mb-4">
-            <div class="w-24 h-36 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shadow-inner">
-              <span class="material-symbols-outlined text-5xl">local_drink</span>
-            </div>
-          </div>
-          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Kesar</h3>
-          <p class="text-xs text-slate-600 mb-4">Exotic Kashmiri saffron threads steeped in rich golden cream.</p>
+      <!-- Right: Flavour Name, Description, Detail & Action -->
+      <div class="md:col-span-6 flex flex-col items-start text-left">
+        <div id="flavour-badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#203A2A]/5 border border-[#203A2A]/10 text-xs font-mono font-bold tracking-wider text-[#203A2A] mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#71835D]"></span>
+          <span>Signature Blend • Real Cardamom</span>
         </div>
-        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-amber-600 transition-colors shadow-md">
-          Find Flavour
-        </button>
-      </div>
 
-      <!-- Badam (Almond) -->
-      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-orange-50/50">
-        <div>
-          <div class="h-44 flex items-center justify-center mb-4">
-            <div class="w-24 h-36 rounded-2xl bg-orange-100 border border-orange-300 flex items-center justify-center text-orange-700 shadow-inner">
-              <span class="material-symbols-outlined text-5xl">nutrition</span>
-            </div>
-          </div>
-          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Badam</h3>
-          <p class="text-xs text-slate-600 mb-4">Real crushed almonds for nourishing nutty deliciousness.</p>
-        </div>
-        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-orange-600 transition-colors shadow-md">
-          Find Flavour
-        </button>
-      </div>
+        <h3 id="flavour-title" class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight leading-[1.1] mb-4">
+          Elaichi
+        </h3>
 
-      <!-- Rose -->
-      <div class="glass-panel p-6 rounded-3xl border border-white/80 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between bg-gradient-to-b from-white to-rose-50/50">
-        <div>
-          <div class="h-44 flex items-center justify-center mb-4">
-            <div class="w-24 h-36 rounded-2xl bg-rose-100 border border-rose-300 flex items-center justify-center text-rose-700 shadow-inner">
-              <span class="material-symbols-outlined text-5xl">emoji_nature</span>
-            </div>
-          </div>
-          <h3 class="font-display font-bold text-2xl text-slate-900 mb-1">Rose</h3>
-          <p class="text-xs text-slate-600 mb-4">Sweet floral Damask rose petals blended with silky milk.</p>
+        <p id="flavour-desc" class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed mb-6">
+          Aromatic royal cardamom infusion with pure toned milk.
+        </p>
+
+        <div id="flavour-meta" class="w-full py-4 border-y border-[#203A2A]/10 flex items-center justify-between text-xs sm:text-sm font-mono text-slate-500 mb-8">
+          <div>FORMAT: <strong class="text-slate-800">200ml Glass / PET / Can</strong></div>
+          <div>SERVE: <strong class="text-slate-800">Ice Cold</strong></div>
         </div>
-        <button onclick="openStoreModal()" class="w-full py-2.5 rounded-xl bg-slate-900 text-white text-xs font-bold uppercase tracking-wider hover:bg-rose-600 transition-colors shadow-md">
-          Find Flavour
-        </button>
+
+        <div class="flex items-center gap-4">
+          <button onclick="openStoreModal()" class="px-7 py-3.5 rounded-2xl bg-[#203A2A] text-white font-sans text-xs font-bold uppercase tracking-wider hover:bg-[#164A35] transition-all shadow-sm">
+            Find Flavour
+          </button>
+          <a href="#hero" class="px-6 py-3.5 rounded-2xl border border-[#203A2A]/15 text-[#203A2A] font-sans text-xs font-bold uppercase tracking-wider hover:bg-white transition-all">
+            Explore 3D Sim
+          </a>
+        </div>
       </div>
 
     </div>
@@ -1314,6 +1316,93 @@
         if (hlCalcium) hlCalcium.innerHTML = '230 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">mg</span>';
         if (hlCarbs) hlCarbs.innerHTML = '24.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span>';
       }
+    }
+
+    // Editorial Flavour Gallery Data & Switcher
+    const flavourData = {
+      elaichi: {
+        title: "Elaichi",
+        badge: "Signature Blend • Real Cardamom",
+        desc: "Aromatic royal cardamom infusion with pure toned milk.",
+        format: "200ml Glass / PET / Can",
+        serve: "Ice Cold",
+        glow: "bg-emerald-100/70",
+        accent: "#203A2A",
+        visualHtml: '<img src="Elaichi.png" alt="Amul Kool Elaichi" class="h-80 sm:h-96 object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-500" />'
+      },
+      kesar: {
+        title: "Kesar",
+        badge: "Royal Saffron • Golden Cream",
+        desc: "Exotic Kashmiri saffron threads steeped in rich golden cream.",
+        format: "200ml Bottle / 180ml Can",
+        serve: "Chilled",
+        glow: "bg-amber-100/70",
+        accent: "#B45309",
+        visualHtml: '<div class="w-56 h-72 sm:w-64 sm:h-80 rounded-[2.5rem] border border-amber-300/40 bg-gradient-to-b from-amber-50 to-amber-100/50 p-8 flex flex-col items-center justify-center shadow-[0_20px_35px_rgba(217,119,6,0.1)] transition-transform duration-500"><span class="material-symbols-outlined text-6xl text-amber-600 mb-3">local_drink</span><span class="font-serif font-bold text-3xl text-amber-900">Kesar</span><span class="text-xs font-mono text-amber-700 uppercase tracking-widest mt-1">Saffron Cream</span></div>'
+      },
+      badam: {
+        title: "Badam",
+        badge: "Nutrient Dense • Real Crushed Almonds",
+        desc: "Real crushed almonds for nourishing nutty deliciousness.",
+        format: "200ml Bottle / 180ml Can",
+        serve: "Chilled",
+        glow: "bg-orange-100/70",
+        accent: "#C2410C",
+        visualHtml: '<div class="w-56 h-72 sm:w-64 sm:h-80 rounded-[2.5rem] border border-orange-300/40 bg-gradient-to-b from-orange-50 to-orange-100/50 p-8 flex flex-col items-center justify-center shadow-[0_20px_35px_rgba(194,65,12,0.1)] transition-transform duration-500"><span class="material-symbols-outlined text-6xl text-orange-600 mb-3">nutrition</span><span class="font-serif font-bold text-3xl text-orange-950">Badam</span><span class="text-xs font-mono text-orange-700 uppercase tracking-widest mt-1">Roasted Almond</span></div>'
+      },
+      rose: {
+        title: "Rose",
+        badge: "Botanical Floral • Pure Damask Petals",
+        desc: "Sweet floral Damask rose petals blended with silky milk.",
+        format: "200ml Bottle / 180ml Can",
+        serve: "Ice Cold",
+        glow: "bg-rose-100/70",
+        accent: "#BE123C",
+        visualHtml: '<div class="w-56 h-72 sm:w-64 sm:h-80 rounded-[2.5rem] border border-rose-300/40 bg-gradient-to-b from-rose-50 to-rose-100/50 p-8 flex flex-col items-center justify-center shadow-[0_20px_35px_rgba(190,18,60,0.1)] transition-transform duration-500"><span class="material-symbols-outlined text-6xl text-rose-600 mb-3">emoji_nature</span><span class="font-serif font-bold text-3xl text-rose-950">Rose</span><span class="text-xs font-mono text-rose-700 uppercase tracking-widest mt-1">Damask Petal</span></div>'
+      }
+    };
+
+    function selectFlavour(key) {
+      const data = flavourData[key];
+      if (!data) return;
+
+      // Update tabs
+      ['elaichi', 'kesar', 'badam', 'rose'].forEach(k => {
+        const btn = document.getElementById(`tab-${k}`);
+        if (!btn) return;
+        const ind = btn.querySelector('.nav-indicator');
+        if (k === key) {
+          btn.className = "flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#203A2A] relative pb-2 transition-all";
+          if (ind) ind.className = "nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-[#203A2A] rounded-full transition-all";
+        } else {
+          btn.className = "flavour-nav-item font-mono text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-slate-400 hover:text-[#203A2A] relative pb-2 transition-all";
+          if (ind) ind.className = "nav-indicator absolute bottom-0 left-0 right-0 h-0.5 bg-transparent rounded-full transition-all";
+        }
+      });
+
+      // Update showcase elements with smooth fade
+      const container = document.getElementById('flavour-visual-container');
+      const glow = document.getElementById('flavour-glow');
+      const badge = document.getElementById('flavour-badge');
+      const title = document.getElementById('flavour-title');
+      const desc = document.getElementById('flavour-desc');
+      const meta = document.getElementById('flavour-meta');
+
+      if (container) {
+        container.style.opacity = '0';
+        container.style.transform = 'translateY(8px)';
+        setTimeout(() => {
+          container.innerHTML = data.visualHtml;
+          container.style.opacity = '1';
+          container.style.transform = 'translateY(0)';
+        }, 150);
+      }
+
+      if (glow) glow.className = `w-64 h-64 rounded-full ${data.glow} blur-3xl absolute -z-10 transition-all duration-500`;
+      if (badge) badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-[${data.accent}]"></span><span>${data.badge}</span>`;
+      if (title) title.textContent = data.title;
+      if (desc) desc.textContent = data.desc;
+      if (meta) meta.innerHTML = `<div>FORMAT: <strong class="text-slate-800">${data.format}</strong></div><div>SERVE: <strong class="text-slate-800">${data.serve}</strong></div>`;
     }
 
     // Store Modal Functions
