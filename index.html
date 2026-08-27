@@ -424,111 +424,158 @@
   <!-- ============================================================ -->
   <!-- NUTRITION & INGREDIENT EXPLORER                              -->
   <!-- ============================================================ -->
-  <section id="nutrition" class="py-20 bg-white/70 border-y border-slate-200/80">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left: Nutrition Breakdown Table -->
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lightRed text-brand-red text-xs font-bold uppercase tracking-wider mb-4">
-            <span class="material-symbols-outlined text-sm">health_and_safety</span>
-            <span>Nutritional Facts</span>
-          </div>
-          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight mb-4">
-            Wholesome Fuel in Every Sip
-          </h2>
-          <p class="text-slate-600 text-sm sm:text-base mb-8">
-            Amul Kool Elaichi balances wholesome milk proteins, calcium, and carbohydrates to revitalize your day without unnecessary additives.
-          </p>
+  <section id="nutrition" class="py-28 lg:py-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden bg-transparent border-t border-[#203A2A]/10">
+    
+    <!-- Ambient Subtle Warm Light Accents -->
+    <div class="absolute top-1/2 -right-20 w-80 h-80 bg-[#71835D]/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 -left-20 w-96 h-96 bg-[#F7F1E5] rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-          <div class="flex items-center gap-2 mb-6 bg-slate-100 p-1 rounded-xl w-fit">
-            <button onclick="setNutritionUnit('100ml')" id="btn-nutri-100" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all">Per 100 ml</button>
-            <button onclick="setNutritionUnit('200ml')" id="btn-nutri-200" class="px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all">Per 200 ml Bottle</button>
-          </div>
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#203A2A]/5 border border-[#203A2A]/10 text-xs font-mono font-bold tracking-[0.2em] text-[#203A2A] uppercase mb-4 shadow-sm">
+        <span class="material-symbols-outlined text-sm text-[#71835D]">health_and_safety</span>
+        <span>Nutritional Facts</span>
+      </div>
+      <h2 class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-[#203A2A] tracking-tight leading-[1.15]">
+        Wholesome Fuel in Every Sip
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600 font-sans max-w-2xl mx-auto leading-relaxed">
+        Amul Kool Elaichi balances wholesome milk proteins, calcium, and carbohydrates to revitalize your day without unnecessary additives.
+      </p>
+    </div>
 
-          <div class="glass-panel rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
-            <table class="w-full text-left text-sm">
-              <thead class="bg-slate-50 text-slate-500 font-semibold border-b border-slate-200">
-                <tr>
-                  <th class="py-3 px-5">Nutrient</th>
-                  <th class="py-3 px-5 text-right" id="nutri-head">Amount (Per 100ml)</th>
-                  <th class="py-3 px-5 text-right">% Daily Value</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-100 text-slate-700">
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Energy</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-red" id="nutri-energy">88 kcal</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">4.4%</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Total Fat</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-fat">3.1 g</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">4.0%</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Protein</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-mint" id="nutri-protein">3.0 g</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">6.0%</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Carbohydrate</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-carbs">12.0 g</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">4.6%</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Added Sugar</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold" id="nutri-sugar">8.0 g</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">16.0%</td>
-                </tr>
-                <tr class="hover:bg-slate-50/80 transition-colors">
-                  <td class="py-3.5 px-5 font-semibold text-slate-900">Calcium</td>
-                  <td class="py-3.5 px-5 text-right font-mono font-bold text-brand-mint" id="nutri-calcium">115 mg</td>
-                  <td class="py-3.5 px-5 text-right text-slate-500">11.5%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <!-- Large Editorial Nutrition Highlights -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto mb-12 lg:mb-16">
+      
+      <!-- 88 kcal -->
+      <div class="p-6 sm:p-8 rounded-[2rem] bg-[#FDFBF8] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)] hover:shadow-md hover:-translate-y-0.5 transition-all text-center flex flex-col items-center justify-center group">
+        <div class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight" id="highlight-energy">88</div>
+        <div class="text-xs sm:text-sm font-mono font-semibold text-[#71835D] uppercase tracking-wider mt-2">kcal • Energy</div>
+      </div>
 
-        <!-- Right: Packaging & Ingredients Box -->
-        <div class="lg:col-span-5 flex flex-col gap-6">
-          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/80 shadow-lg">
-            <h3 class="font-display font-bold text-xl text-slate-900 mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined text-brand-mint">inventory_2</span>
-              <span>Available Packaging</span>
-            </h3>
-            <p class="text-xs text-slate-500 mb-4">Packaged under state-of-the-art sterile conditions.</p>
-            <div class="grid grid-cols-2 gap-3">
-              <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
-                <div class="text-2xl font-black text-brand-red font-display">200 ml</div>
-                <div class="text-xs font-semibold text-slate-600 mt-1">Glass & PET Bottle</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹30</div>
-              </div>
-              <div class="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm text-center">
-                <div class="text-2xl font-black text-brand-mint font-display">180 ml</div>
-                <div class="text-xs font-semibold text-slate-600 mt-1">Sleek Can & Tetra</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹25</div>
-              </div>
-            </div>
-          </div>
+      <!-- 3.0 g Protein -->
+      <div class="p-6 sm:p-8 rounded-[2rem] bg-[#FDFBF8] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)] hover:shadow-md hover:-translate-y-0.5 transition-all text-center flex flex-col items-center justify-center group">
+        <div class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight" id="highlight-protein">3.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span></div>
+        <div class="text-xs sm:text-sm font-mono font-semibold text-[#71835D] uppercase tracking-wider mt-2">Protein</div>
+      </div>
 
-          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/80 shadow-lg">
-            <h3 class="font-display font-bold text-xl text-slate-900 mb-3 flex items-center gap-2">
-              <span class="material-symbols-outlined text-brand-elaichi">local_florist</span>
-              <span>Pure Ingredients</span>
-            </h3>
-            <p class="text-sm text-slate-700 leading-relaxed mb-4">
-              <strong>Toned Milk</strong> (min. 3.0% Fat, 8.5% SNF), <strong>Sugar</strong>, <strong>Natural Cardamom Extract</strong>, and Permitted Natural Stabilizer (INS 407).
-            </p>
-            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex items-center gap-3">
-              <span class="material-symbols-outlined text-emerald-600 text-xl">verified_user</span>
-              <span class="text-xs font-medium text-emerald-800">FSSAI Certified Quality • Best Before 180 Days from Mfg</span>
-            </div>
-          </div>
+      <!-- 115 mg Calcium -->
+      <div class="p-6 sm:p-8 rounded-[2rem] bg-[#FDFBF8] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)] hover:shadow-md hover:-translate-y-0.5 transition-all text-center flex flex-col items-center justify-center group">
+        <div class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight" id="highlight-calcium">115 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">mg</span></div>
+        <div class="text-xs sm:text-sm font-mono font-semibold text-[#71835D] uppercase tracking-wider mt-2">Calcium</div>
+      </div>
+
+      <!-- 12.0 g Carbohydrate -->
+      <div class="p-6 sm:p-8 rounded-[2rem] bg-[#FDFBF8] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)] hover:shadow-md hover:-translate-y-0.5 transition-all text-center flex flex-col items-center justify-center group">
+        <div class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight" id="highlight-carbs">12.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span></div>
+        <div class="text-xs sm:text-sm font-mono font-semibold text-[#71835D] uppercase tracking-wider mt-2">Carbohydrate</div>
+      </div>
+
+    </div>
+
+    <!-- Detailed Nutrition Table & Controls Area -->
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- Unit Switcher Toggle -->
+      <div class="flex items-center justify-center mb-8">
+        <div class="flex items-center gap-1.5 p-1.5 rounded-2xl bg-[#203A2A]/5 border border-[#203A2A]/10 shadow-sm">
+          <button onclick="setNutritionUnit('100ml')" id="btn-nutri-100" class="px-5 py-2 rounded-xl text-xs font-bold bg-white text-[#203A2A] shadow-sm transition-all">Per 100 ml</button>
+          <button onclick="setNutritionUnit('200ml')" id="btn-nutri-200" class="px-5 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-[#203A2A] transition-all">Per 200 ml Bottle</button>
         </div>
       </div>
+
+      <!-- Detailed Table -->
+      <div class="rounded-3xl bg-[#FDFBF8] border border-[#203A2A]/10 shadow-[0_4px_24px_rgba(32,58,42,0.03)] overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm font-sans">
+            <thead class="bg-[#FAF6EE] text-[#203A2A] font-semibold border-b border-[#203A2A]/10">
+              <tr>
+                <th class="py-4 px-6 font-serif text-base">Nutrient</th>
+                <th class="py-4 px-6 text-right font-serif text-base" id="nutri-head">Amount (Per 100ml)</th>
+                <th class="py-4 px-6 text-right font-serif text-base">% Daily Value</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[#203A2A]/5 text-slate-700">
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Energy</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-[#203A2A]" id="nutri-energy">88 kcal</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">4.4%</td>
+              </tr>
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Total Fat</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-slate-800" id="nutri-fat">3.1 g</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">4.0%</td>
+              </tr>
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Protein</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-[#203A2A]" id="nutri-protein">3.0 g</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">6.0%</td>
+              </tr>
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Carbohydrate</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-slate-800" id="nutri-carbs">12.0 g</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">4.6%</td>
+              </tr>
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Added Sugar</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-slate-800" id="nutri-sugar">8.0 g</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">16.0%</td>
+              </tr>
+              <tr class="hover:bg-white/60 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-900">Calcium</td>
+                <td class="py-4 px-6 text-right font-mono font-bold text-[#203A2A]" id="nutri-calcium">115 mg</td>
+                <td class="py-4 px-6 text-right text-slate-500 font-mono">11.5%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Packaging & Ingredients Sub-Panels -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        
+        <!-- Packaging -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-[#FAF6EE] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)]">
+          <h3 class="font-serif font-bold text-xl text-[#203A2A] mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined text-[#71835D]">inventory_2</span>
+            <span>Available Packaging</span>
+          </h3>
+          <p class="text-xs text-slate-500 mb-6 font-sans">Packaged under state-of-the-art sterile conditions.</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-2xl bg-white border border-[#203A2A]/10 shadow-sm text-center">
+              <div class="text-2xl font-serif font-bold text-[#203A2A]">200 ml</div>
+              <div class="text-xs font-semibold text-slate-600 mt-1">Glass & PET Bottle</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹30</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-[#203A2A]/10 shadow-sm text-center">
+              <div class="text-2xl font-serif font-bold text-[#203A2A]">180 ml</div>
+              <div class="text-xs font-semibold text-slate-600 mt-1">Sleek Can & Tetra</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">MRP: ₹25</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pure Ingredients -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-[#FAF6EE] border border-[#203A2A]/10 shadow-[0_4px_20px_rgba(32,58,42,0.03)] flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif font-bold text-xl text-[#203A2A] mb-2 flex items-center gap-2">
+              <span class="material-symbols-outlined text-[#71835D]">local_florist</span>
+              <span>Pure Ingredients</span>
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed font-sans mt-3 mb-6">
+              <strong>Toned Milk</strong> (min. 3.0% Fat, 8.5% SNF), <strong>Sugar</strong>, <strong>Natural Cardamom Extract</strong>, and Permitted Natural Stabilizer (INS 407).
+            </p>
+          </div>
+          <div class="p-3.5 bg-white rounded-2xl border border-[#203A2A]/10 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#71835D] text-xl">verified_user</span>
+            <span class="text-xs font-medium text-[#203A2A]">FSSAI Certified Quality • Best Before 180 Days from Mfg</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
   </section>
 
   <!-- ============================================================ -->
@@ -1085,27 +1132,39 @@
       const carbs = document.getElementById('nutri-carbs');
       const sugar = document.getElementById('nutri-sugar');
       const calcium = document.getElementById('nutri-calcium');
+      const hlEnergy = document.getElementById('highlight-energy');
+      const hlProtein = document.getElementById('highlight-protein');
+      const hlCalcium = document.getElementById('highlight-calcium');
+      const hlCarbs = document.getElementById('highlight-carbs');
 
       if (unit === '100ml') {
-        btn100.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all";
-        btn200.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all";
-        nutriHead.textContent = "Amount (Per 100ml)";
-        energy.textContent = "88 kcal";
-        fat.textContent = "3.1 g";
-        protein.textContent = "3.0 g";
-        carbs.textContent = "12.0 g";
-        sugar.textContent = "8.0 g";
-        calcium.textContent = "115 mg";
+        if (btn100) btn100.className = "px-5 py-2 rounded-xl text-xs font-bold bg-white text-[#203A2A] shadow-sm transition-all";
+        if (btn200) btn200.className = "px-5 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-[#203A2A] transition-all";
+        if (nutriHead) nutriHead.textContent = "Amount (Per 100ml)";
+        if (energy) energy.textContent = "88 kcal";
+        if (fat) fat.textContent = "3.1 g";
+        if (protein) protein.textContent = "3.0 g";
+        if (carbs) carbs.textContent = "12.0 g";
+        if (sugar) sugar.textContent = "8.0 g";
+        if (calcium) calcium.textContent = "115 mg";
+        if (hlEnergy) hlEnergy.textContent = "88";
+        if (hlProtein) hlProtein.innerHTML = '3.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span>';
+        if (hlCalcium) hlCalcium.innerHTML = '115 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">mg</span>';
+        if (hlCarbs) hlCarbs.innerHTML = '12.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span>';
       } else {
-        btn200.className = "px-4 py-1.5 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition-all";
-        btn100.className = "px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition-all";
-        nutriHead.textContent = "Amount (Per 200ml Bottle)";
-        energy.textContent = "176 kcal";
-        fat.textContent = "6.2 g";
-        protein.textContent = "6.0 g";
-        carbs.textContent = "24.0 g";
-        sugar.textContent = "16.0 g";
-        calcium.textContent = "230 mg";
+        if (btn200) btn200.className = "px-5 py-2 rounded-xl text-xs font-bold bg-white text-[#203A2A] shadow-sm transition-all";
+        if (btn100) btn100.className = "px-5 py-2 rounded-xl text-xs font-bold text-slate-600 hover:text-[#203A2A] transition-all";
+        if (nutriHead) nutriHead.textContent = "Amount (Per 200ml Bottle)";
+        if (energy) energy.textContent = "176 kcal";
+        if (fat) fat.textContent = "6.2 g";
+        if (protein) protein.textContent = "6.0 g";
+        if (carbs) carbs.textContent = "24.0 g";
+        if (sugar) sugar.textContent = "16.0 g";
+        if (calcium) calcium.textContent = "230 mg";
+        if (hlEnergy) hlEnergy.textContent = "176";
+        if (hlProtein) hlProtein.innerHTML = '6.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span>';
+        if (hlCalcium) hlCalcium.innerHTML = '230 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">mg</span>';
+        if (hlCarbs) hlCarbs.innerHTML = '24.0 <span class="text-2xl sm:text-3xl font-light text-slate-500 font-sans">g</span>';
       }
     }
 
