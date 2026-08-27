@@ -962,7 +962,8 @@
         </div>
 
         <h2 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight leading-[1.1] mb-6">
-          Your next Kool is closer than you think.
+          Your next Kool is closer<br />
+          <span class="text-[#71835D] font-normal italic">than you think.</span>
         </h2>
 
         <p class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed mb-8">
@@ -990,7 +991,7 @@
               type="text" 
               id="locator-search-input"
               oninput="filterStoreLocations(this.value)"
-              placeholder="Enter Pincode or City (e.g. 380001, Mumbai, Delhi)..." 
+              placeholder="Enter Pincode or City" 
               class="w-full h-14 pl-12 pr-36 rounded-2xl bg-[#FAF6EE] border border-[#203A2A]/15 text-sm sm:text-base font-sans text-[#203A2A] placeholder:text-slate-400 focus:outline-none focus:border-[#203A2A] focus:ring-1 focus:ring-[#203A2A] transition-all"
             />
             <button 
@@ -1013,8 +1014,9 @@
                 <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
                   Amul Preferred Outlet - Central Plaza
                 </h4>
+                <div class="text-xs text-slate-500 font-sans mt-0.5">Central Plaza Outlet</div>
                 <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
-                  0.8 km away • Open 8:00 AM - 10:30 PM
+                  Open 8:00 AM - 10:30 PM · 0.8 km away
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 mt-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
@@ -1038,8 +1040,9 @@
                 <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
                   Amul Ice Lounge & Dairy Boutique
                 </h4>
+                <div class="text-xs text-slate-500 font-sans mt-0.5">Dairy Boutique Experience</div>
                 <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
-                  1.4 km away • Open 9:00 AM - 11:00 PM
+                  Open 9:00 AM - 11:00 PM · 1.4 km away
                 </div>
                 <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 mt-2">
                   <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
@@ -1592,11 +1595,11 @@
       if (!list) return;
       
       const stores = [
-        { id: "01", name: "Amul Preferred Outlet - Central Plaza", meta: "0.8 km away • Open 8:00 AM - 10:30 PM", status: "In Stock" },
-        { id: "02", name: "Amul Ice Lounge & Dairy Boutique", meta: "1.4 km away • Open 9:00 AM - 11:00 PM", status: "In Stock" }
+        { id: "01", name: "Amul Preferred Outlet - Central Plaza", detail: "Central Plaza Outlet", meta: "Open 8:00 AM - 10:30 PM · 0.8 km away", status: "In Stock" },
+        { id: "02", name: "Amul Ice Lounge & Dairy Boutique", detail: "Dairy Boutique Experience", meta: "Open 9:00 AM - 11:00 PM · 1.4 km away", status: "In Stock" }
       ];
 
-      const filtered = stores.filter(s => s.name.toLowerCase().includes(q) || s.meta.toLowerCase().includes(q) || q === '');
+      const filtered = stores.filter(s => s.name.toLowerCase().includes(q) || s.detail.toLowerCase().includes(q) || s.meta.toLowerCase().includes(q) || q === '');
 
       if (filtered.length === 0) {
         list.innerHTML = `<div class="py-8 text-center text-slate-500 font-sans text-sm">No Amul outlets found for "${query}". Try searching "Mumbai", "Delhi", "Central", or a 6-digit Pincode.</div>`;
@@ -1609,6 +1612,7 @@
                 <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
                   ${s.name}
                 </h4>
+                <div class="text-xs text-slate-500 font-sans mt-0.5">${s.detail}</div>
                 <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
                   ${s.meta}
                 </div>
