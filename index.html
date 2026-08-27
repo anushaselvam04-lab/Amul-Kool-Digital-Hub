@@ -944,49 +944,187 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- STORE LOCATOR MODAL                                          -->
+  <!-- EDITORIAL STORE LOCATOR SECTION — FIND YOUR KOOL             -->
+  <!-- ============================================================ -->
+  <section id="locator" class="py-28 lg:py-36 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden bg-transparent border-t border-[#203A2A]/10">
+    
+    <!-- Ambient Subtle Warm Light Accents -->
+    <div class="absolute top-1/2 right-0 w-80 h-80 bg-[#71835D]/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-0 w-96 h-96 bg-[#F7F1E5] rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start max-w-6xl mx-auto">
+      
+      <!-- LEFT COLUMN: Section Heading & Editorial Context -->
+      <div class="lg:col-span-5 flex flex-col items-start text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#203A2A]/5 border border-[#203A2A]/10 text-xs font-mono font-bold tracking-[0.25em] text-[#203A2A] uppercase mb-4 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#203A2A]"></span>
+          <span>FIND YOUR KOOL</span>
+        </div>
+
+        <h2 class="font-serif font-bold text-4xl sm:text-5xl lg:text-6xl text-[#203A2A] tracking-tight leading-[1.1] mb-6">
+          Your next Kool is closer than you think.
+        </h2>
+
+        <p class="text-base sm:text-lg text-slate-600 font-sans leading-relaxed mb-8">
+          Find an Amul outlet near you and enjoy your favourite flavoured milk chilled.
+        </p>
+
+        <!-- Secondary Information Badge -->
+        <div class="p-4 rounded-2xl bg-[#FAF6EE] border border-[#203A2A]/10 flex items-center gap-3 w-full sm:w-auto">
+          <span class="material-symbols-outlined text-[#71835D] text-2xl">store</span>
+          <div class="text-left">
+            <div class="text-xs font-bold text-[#203A2A] font-sans">10,000+ Exclusive Outlets</div>
+            <div class="text-[11px] text-slate-500 font-medium font-sans">Over 10,000+ exclusive Amul Parlours across India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Search Area & Editorial Store Results -->
+      <div class="lg:col-span-7 flex flex-col">
+        
+        <!-- Search Field Area -->
+        <div class="mb-8">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined absolute left-4 text-slate-400 text-xl pointer-events-none">search</span>
+            <input 
+              type="text" 
+              id="locator-search-input"
+              oninput="filterStoreLocations(this.value)"
+              placeholder="Enter Pincode or City (e.g. 380001, Mumbai, Delhi)..." 
+              class="w-full h-14 pl-12 pr-36 rounded-2xl bg-[#FAF6EE] border border-[#203A2A]/15 text-sm sm:text-base font-sans text-[#203A2A] placeholder:text-slate-400 focus:outline-none focus:border-[#203A2A] focus:ring-1 focus:ring-[#203A2A] transition-all"
+            />
+            <button 
+              onclick="document.getElementById('locator-search-input').focus()"
+              class="absolute right-2.5 px-4 py-2 rounded-xl bg-[#203A2A] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#164A35] transition-colors"
+            >
+              Find Stores →
+            </button>
+          </div>
+        </div>
+
+        <!-- Editorial Store Results List -->
+        <div id="store-results-list" class="divide-y divide-[#203A2A]/10 border-y border-[#203A2A]/10 mb-8">
+          
+          <!-- Store 01 -->
+          <div class="py-6 first:pt-4 group flex items-start justify-between gap-4">
+            <div class="flex items-start gap-4 sm:gap-6">
+              <span class="font-serif italic text-2xl sm:text-3xl text-[#71835D]/40 font-light select-none">01</span>
+              <div>
+                <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
+                  Amul Preferred Outlet - Central Plaza
+                </h4>
+                <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
+                  0.8 km away • Open 8:00 AM - 10:30 PM
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 mt-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span>In Stock</span>
+                </div>
+              </div>
+            </div>
+            <button 
+              onclick="alert('Opening map directions to Amul Preferred Outlet - Central Plaza...')"
+              class="text-xs sm:text-sm font-mono font-bold text-[#203A2A] hover:text-[#71835D] transition-colors whitespace-nowrap pt-1"
+            >
+              Get Directions →
+            </button>
+          </div>
+
+          <!-- Store 02 -->
+          <div class="py-6 last:pb-4 group flex items-start justify-between gap-4">
+            <div class="flex items-start gap-4 sm:gap-6">
+              <span class="font-serif italic text-2xl sm:text-3xl text-[#71835D]/40 font-light select-none">02</span>
+              <div>
+                <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
+                  Amul Ice Lounge & Dairy Boutique
+                </h4>
+                <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
+                  1.4 km away • Open 9:00 AM - 11:00 PM
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 mt-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span>In Stock</span>
+                </div>
+              </div>
+            </div>
+            <button 
+              onclick="alert('Opening map directions to Amul Ice Lounge & Dairy Boutique...')"
+              class="text-xs sm:text-sm font-mono font-bold text-[#203A2A] hover:text-[#71835D] transition-colors whitespace-nowrap pt-1"
+            >
+              Get Directions →
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Order CTA Area -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 sm:p-6 rounded-2xl bg-[#FAF6EE] border border-[#203A2A]/10">
+          <div class="text-left">
+            <div class="text-sm font-bold text-[#203A2A] font-sans">Need chilled Kool right now?</div>
+            <div class="text-xs text-slate-500 font-sans mt-0.5">Quick doorstep delivery in select cities</div>
+          </div>
+          <button 
+            onclick="alert('Opening quick delivery options (Blinkit / Zepto / Swiggy Instamart)...')"
+            class="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#203A2A] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#164A35] transition-all shadow-sm whitespace-nowrap"
+          >
+            Order 10-Min Delivery
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- STORE LOCATOR MODAL (SYNCED WITH SECTION)                     -->
   <!-- ============================================================ -->
   <div id="store-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-    <div class="glass-panel max-w-lg w-full mx-4 p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/80 relative scale-95 transition-transform duration-300" id="store-modal-card">
+    <div class="bg-[#FDFBF8] max-w-lg w-full mx-4 p-6 sm:p-8 rounded-3xl shadow-2xl border border-[#203A2A]/15 relative scale-95 transition-transform duration-300" id="store-modal-card">
       <button onclick="closeStoreModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors">
         <span class="material-symbols-outlined text-xl">close</span>
       </button>
 
       <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-brand-lightRed text-brand-red flex items-center justify-center">
+        <div class="w-10 h-10 rounded-xl bg-[#203A2A]/10 text-[#203A2A] flex items-center justify-center">
           <span class="material-symbols-outlined text-2xl">store</span>
         </div>
         <div>
-          <h3 class="font-display font-bold text-xl text-slate-900">Find Amul Parlours Near You</h3>
-          <p class="text-xs text-slate-500">Over 10,000+ exclusive Amul Parlours across India</p>
+          <h3 class="font-serif font-bold text-xl text-[#203A2A]">Find Amul Parlours Near You</h3>
+          <p class="text-xs text-slate-500 font-sans">Over 10,000+ exclusive Amul Parlours across India</p>
         </div>
       </div>
 
       <div class="relative my-4">
-        <input type="text" placeholder="Enter Pincode or City (e.g. 380001, Mumbai, Delhi)..." class="w-full px-4 py-3 pl-11 rounded-2xl bg-white border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red" />
+        <input 
+          type="text" 
+          placeholder="Enter Pincode or City (e.g. 380001, Mumbai, Delhi)..." 
+          class="w-full px-4 py-3 pl-11 rounded-2xl bg-[#FAF6EE] border border-[#203A2A]/15 text-sm font-sans focus:outline-none focus:border-[#203A2A]" 
+        />
         <span class="material-symbols-outlined absolute left-3.5 top-3 text-slate-400">search</span>
       </div>
 
       <div class="space-y-3 max-h-56 overflow-y-auto pr-1">
-        <div class="p-3.5 rounded-xl bg-white/90 border border-slate-100 hover:border-brand-mint/50 transition-colors flex items-center justify-between">
+        <div class="p-3.5 rounded-xl bg-white border border-[#203A2A]/10 flex items-center justify-between">
           <div>
-            <div class="text-xs font-bold text-slate-900">Amul Preferred Outlet - Central Plaza</div>
+            <div class="text-xs font-bold text-[#203A2A]">Amul Preferred Outlet - Central Plaza</div>
             <div class="text-[11px] text-slate-500">Open 8:00 AM - 10:30 PM • 0.8 km away</div>
           </div>
-          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-brand-mint text-[10px] font-bold">In Stock</span>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">In Stock</span>
         </div>
-        <div class="p-3.5 rounded-xl bg-white/90 border border-slate-100 hover:border-brand-mint/50 transition-colors flex items-center justify-between">
+        <div class="p-3.5 rounded-xl bg-white border border-[#203A2A]/10 flex items-center justify-between">
           <div>
-            <div class="text-xs font-bold text-slate-900">Amul Ice Lounge & Dairy Boutique</div>
+            <div class="text-xs font-bold text-[#203A2A]">Amul Ice Lounge & Dairy Boutique</div>
             <div class="text-[11px] text-slate-500">Open 9:00 AM - 11:00 PM • 1.4 km away</div>
           </div>
-          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-brand-mint text-[10px] font-bold">In Stock</span>
+          <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">In Stock</span>
         </div>
       </div>
 
       <div class="mt-6 flex items-center justify-end gap-3">
         <button onclick="closeStoreModal()" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-100 transition-colors">Close</button>
-        <button onclick="alert('Opening quick delivery options (Blinkit / Zepto / Swiggy Instamart)...')" class="px-5 py-2 rounded-xl bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-darkRed transition-colors shadow-md">Order 10-Min Delivery</button>
+        <button onclick="alert('Opening quick delivery options (Blinkit / Zepto / Swiggy Instamart)...')" class="px-5 py-2.5 rounded-xl bg-[#203A2A] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#164A35] transition-colors shadow-md">Order 10-Min Delivery</button>
       </div>
     </div>
   </div>
@@ -1445,6 +1583,50 @@
       if (title) title.textContent = data.title;
       if (desc) desc.textContent = data.desc;
       if (meta) meta.innerHTML = `<div>FORMAT: <strong class="text-slate-800">${data.format}</strong></div><div>SERVE: <strong class="text-slate-800">${data.serve}</strong></div>`;
+    }
+
+    // Store Locator Search Filter
+    function filterStoreLocations(query) {
+      const q = query.toLowerCase().trim();
+      const list = document.getElementById('store-results-list');
+      if (!list) return;
+      
+      const stores = [
+        { id: "01", name: "Amul Preferred Outlet - Central Plaza", meta: "0.8 km away • Open 8:00 AM - 10:30 PM", status: "In Stock" },
+        { id: "02", name: "Amul Ice Lounge & Dairy Boutique", meta: "1.4 km away • Open 9:00 AM - 11:00 PM", status: "In Stock" }
+      ];
+
+      const filtered = stores.filter(s => s.name.toLowerCase().includes(q) || s.meta.toLowerCase().includes(q) || q === '');
+
+      if (filtered.length === 0) {
+        list.innerHTML = `<div class="py-8 text-center text-slate-500 font-sans text-sm">No Amul outlets found for "${query}". Try searching "Mumbai", "Delhi", "Central", or a 6-digit Pincode.</div>`;
+      } else {
+        list.innerHTML = filtered.map(s => `
+          <div class="py-6 first:pt-4 last:pb-4 group flex items-start justify-between gap-4">
+            <div class="flex items-start gap-4 sm:gap-6">
+              <span class="font-serif italic text-2xl sm:text-3xl text-[#71835D]/40 font-light select-none">${s.id}</span>
+              <div>
+                <h4 class="font-serif font-bold text-lg sm:text-xl text-[#203A2A] tracking-tight">
+                  ${s.name}
+                </h4>
+                <div class="text-xs sm:text-sm font-mono text-[#71835D] mt-1">
+                  ${s.meta}
+                </div>
+                <div class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-700 mt-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                  <span>${s.status}</span>
+                </div>
+              </div>
+            </div>
+            <button 
+              onclick="alert('Opening map directions to ${s.name}...')"
+              class="text-xs sm:text-sm font-mono font-bold text-[#203A2A] hover:text-[#71835D] transition-colors whitespace-nowrap pt-1"
+            >
+              Get Directions →
+            </button>
+          </div>
+        `).join('');
+      }
     }
 
     // Store Modal Functions
